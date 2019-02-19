@@ -16,12 +16,13 @@ import cv2
 
 pooq_login_url = "https://www.pooq.co.kr/member/login.html?referer=https%3A%2F%2Fwww.pooq.co.kr%2Findex.html"
 pooq_content_url_superman = "http://www.pooq.co.kr/player/vod.html?programid=K02_T2005-0230_2&contentid=K02_PS-2019007539-01-000.2"
+pooq_content_url_livealone = "https://www.pooq.co.kr/player/vod.html?programid=M_1002831100000100000&contentid=M_1002831100304100000.1"
 pooq_id = sys.argv[1]
 pooq_pwd = sys.argv[2]
 
 def take_screenshot(webdriver):
 	while True:
-		webdriver.save_screenshot("./screenshot/"+str(time.time())+".png")
+		webdriver.save_screenshot("./screenshot/live_alone/"+str(time.time())+".png")
 
 
 def execute_pooq_service():
@@ -51,8 +52,8 @@ def execute_pooq_service():
 	actions.perform()
 	time.sleep(random.randint(0, 5))
 
-	## Go to superman page
-	driver.get(pooq_content_url_superman)
+	## Go to "superman" / "live alone" page
+	driver.get(pooq_content_url_livealone)
 	time.sleep(5)
 	button_elements	 = driver.find_elements_by_tag_name('button')
 	close_btn = ""

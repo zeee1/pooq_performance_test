@@ -2,7 +2,7 @@ import cv2
 import glob
 
 def compute_response_time():
-	filename_list = glob.glob("./screenshot/return_of_superman/*.png")
+	filename_list = glob.glob("./screenshot/cropped_return_of_superman/*.png")
 	filename_list.sort()
 
 	img_histogram = list()
